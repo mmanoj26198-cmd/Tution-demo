@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tuition Manager — Fee, Attendance & Parent Demo</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--ink:#172033;--muted:#758096;--line:#e7ecf3;--blue:#365cf5;--blue2:#2445d8;--green:#16865d;--red:#d97732;--shadow:0 12px 34px rgba(30,48,90,.08)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--ink)}button{font:inherit;cursor:pointer}.app{max-width:1180px;margin:auto;padding:24px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:26px}.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#365cf5,#7c5cff);display:grid;place-items:center;color:white;font-size:23px;box-shadow:0 8px 18px #365cf533}.brand h1{font-size:20px;margin:0;letter-spacing:-.4px}.brand p{margin:3px 0 0;color:var(--muted);font-size:12px}.demo-tag{background:#fff3d9;color:#9b6512;padding:8px 12px;border-radius:999px;font-weight:750;font-size:11px;letter-spacing:.5px}.greeting{margin-bottom:20px}.greeting h2{font-size:27px;letter-spacing:-.8px;margin:0 0 6px}.greeting p{margin:0;color:var(--muted);font-size:14px}.stats{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px;margin-bottom:20px}.stat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:21px;box-shadow:var(--shadow);min-width:0}.stat.primary{background:linear-gradient(125deg,#2f55ed,#5c65f8);color:#fff;border:0}.stat-label{font-size:13px;opacity:.82;display:flex;align-items:center;gap:8px}.stat-value{font-size:30px;font-weight:850;letter-spacing:-1px;margin:13px 0 5px}.stat-foot{font-size:12px;opacity:.8}.stat-icon{float:right;font-size:21px}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:26px 0 14px}.toolbar h3{font-size:18px;margin:0}.toolbar p{margin:4px 0 0;color:var(--muted);font-size:12px}.btn{border:0;border-radius:12px;padding:13px 17px;font-weight:750;display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:.18s}.btn-main{background:var(--blue);color:white;box-shadow:0 8px 18px #365cf52c}.btn-main:hover{background:var(--blue2);transform:translateY(-1px)}.btn:disabled{opacity:.65;cursor:wait}.table-card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}.table-top{padding:17px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}.search{border:1px solid var(--line);border-radius:10px;padding:10px 12px;width:230px;max-width:48%;outline:none;background:#fbfcff}.search:focus{border-color:#aab8ff}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:650px}th{text-align:left;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.7px;font-weight:750;background:#fbfcff;padding:14px 20px}td{padding:16px 20px;border-top:1px solid var(--line);font-size:13px}tbody tr:hover{background:#fafbff}.student{display:flex;align-items:center;gap:11px}.avatar{height:38px;width:38px;border-radius:12px;background:#edf1ff;color:#365cf5;display:grid;place-items:center;font-weight:850}.student-name{font-weight:750;font-size:13px}.student-sub{font-size:11px;color:var(--muted);margin-top:3px}.amount{font-weight:850;font-size:14px}.pill{display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border-radius:999px;background:#fff2e8;color:#b85d20;font-size:11px;font-weight:750}.pill:before{content:'';width:6px;height:6px;background:#e68a42;border-radius:50%}.sent-pill{background:#e8f8f0;color:#14764f}.sent-pill:before{background:#1aa16d}.send-one{border:1px solid #dce3ff;background:#f4f6ff;color:var(--blue);padding:8px 10px;border-radius:9px;font-weight:750;font-size:11px;white-space:nowrap}.send-one:hover{background:#e9edff}.bottom-note{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:12px;line-height:1.55;padding:16px 4px}.bottom-note span{font-size:16px}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#172033;color:white;border-radius:14px;padding:14px 18px;box-shadow:0 12px 30px #101a2e40;font-size:13px;font-weight:650;opacity:0;pointer-events:none;transition:.25s;max-width:calc(100% - 30px);z-index:5}.toast.show{opacity:1;transform:translate(-50%,0)}.modal-back{position:fixed;inset:0;background:#10182c70;display:none;place-items:center;padding:20px;z-index:10}.modal-back.show{display:grid}.modal{background:white;border-radius:20px;padding:25px;max-width:440px;width:100%;box-shadow:0 24px 70px #10182c40}.modal-icon{height:48px;width:48px;border-radius:15px;background:#e8f8f0;display:grid;place-items:center;font-size:24px;margin-bottom:15px}.modal h3{margin:0 0 7px;font-size:21px}.modal p{color:var(--muted);font-size:13px;line-height:1.6;margin:0 0 17px}.modal-summary{background:#f5f7fb;border-radius:12px;padding:14px;margin-bottom:18px;font-size:13px;display:flex;justify-content:space-between;gap:10px}.modal-actions{display:flex;gap:10px}.btn-secondary{background:#f0f2f7;color:#3f4b61;flex:1}.modal-actions .btn-main{flex:1}.footer{display:flex;justify-content:space-between;gap:12px;color:#9aa3b4;font-size:11px;margin-top:20px;padding:0 4px}
+.nav-tabs{display:flex;gap:8px;margin:-7px 0 24px;background:#e9edf7;padding:6px;border-radius:14px;width:max-content;max-width:100%}.nav-tab{border:0;background:transparent;color:#64708a;padding:11px 16px;border-radius:10px;font-size:13px;font-weight:800}.nav-tab.active{background:#fff;color:var(--blue);box-shadow:0 3px 10px #17203310}.page-hidden{display:none!important}.attendance-controls{display:flex;gap:7px}.att-btn{border:1px solid #dce3ee;background:#fff;color:#68758a;padding:8px 13px;border-radius:9px;font-size:12px;font-weight:850;min-width:42px}.att-btn.present.active{background:#e8f8f0;border-color:#b5e8ce;color:#14764f}.att-btn.absent.active{background:#fff0ef;border-color:#ffc9c4;color:#bd3d35}.att-status{display:inline-flex;padding:6px 9px;border-radius:999px;background:#f0f3f8;color:#6c778b;font-size:11px;font-weight:750}.att-status.alerted{background:#fff0ef;color:#bd3d35}.att-status.present-status{background:#e8f8f0;color:#14764f}.attendance-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}.att-stat{background:white;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}.att-stat span{color:var(--muted);font-size:12px}.att-stat strong{display:block;font-size:25px;margin-top:7px}.alert-btn{border:0;background:#fff0ef;color:#bd3d35;padding:8px 10px;border-radius:9px;font-size:11px;font-weight:800;white-space:nowrap}.alert-btn:disabled{opacity:.7}.attendance-callout{border:1px solid #ffd9b0;background:#fff8ed;border-radius:14px;padding:13px 15px;color:#86571a;font-size:12px;line-height:1.5;margin-bottom:16px}
+
+.marks-input{width:100px;max-width:100%;border:1px solid var(--line);border-radius:9px;padding:9px 10px;font:inherit;font-weight:800;color:var(--ink);background:#fbfcff}.marks-input:focus{outline:2px solid #dce3ff;border-color:#8fa2ff}.rank-badge{display:inline-flex;align-items:center;justify-content:center;min-width:42px;padding:7px 10px;border-radius:10px;background:#eef1f8;color:#4b5870;font-weight:850}.rank-badge.top-rank{background:#fff1c7;color:#936400}.result-pass{display:inline-flex;background:#e8f8f0;color:#14764f;padding:6px 9px;border-radius:999px;font-size:11px;font-weight:800}.result-review{display:inline-flex;background:#fff0ef;color:#bd3d35;padding:6px 9px;border-radius:999px;font-size:11px;font-weight:800}
+
+.owner-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
+.owner-mini-grid .att-stat small{display:block;color:var(--muted);font-size:11px;margin-top:7px}
+.owner-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.owner-form-grid label{display:grid;gap:7px;font-size:12px;font-weight:750;color:var(--muted)}
+.owner-input{width:100%;max-width:100%}
+.owner-form-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}
+.status-select{border:1px solid var(--line);border-radius:9px;padding:8px;background:#fff;color:var(--ink);font:inherit;font-size:12px;font-weight:750;max-width:150px}
+@media(max-width:720px){.owner-mini-grid{grid-template-columns:1fr}.owner-form-grid{grid-template-columns:1fr}.owner-form-actions{flex-direction:column}.owner-form-actions .btn{width:100%}.nav-tabs{width:100%;overflow-x:auto}.nav-tab{white-space:nowrap}}
+
+@media(max-width:720px){.app{padding:16px}.top{margin-bottom:23px}.brand h1{font-size:17px}.greeting h2{font-size:23px}.stats{grid-template-columns:1fr 1fr}.stat.primary{grid-column:1/-1}.stat{padding:17px}.stat-value{font-size:26px}.toolbar{align-items:stretch;flex-direction:column}.toolbar .btn{width:100%}.table-top{align-items:stretch;flex-direction:column}.search{max-width:100%;width:100%}.footer{flex-direction:column}.demo-tag{font-size:9px;padding:7px 9px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand"><div class="logo">₹</div><div><h1>Tuition Manager</h1><p>Simple fee tracking for tutors</p></div></div>
+    <div class="demo-tag">INTERACTIVE DEMO</div>
+  </header>
+  <nav class="nav-tabs" aria-label="App pages"><button class="nav-tab active" data-page="feePage">💰 Fee Manager</button><button class="nav-tab" data-page="attendancePage">📋 Attendance</button><button class="nav-tab" data-page="parentsPage">👨‍👩‍👧 Parents Panel</button><button class="nav-tab" data-page="testPage">🏆 Test & Rank</button><button class="nav-tab" data-page="ownerPage">👑 Owner Panel</button></nav>
+<main id="feePage">
+  <section class="greeting"><h2>Fee Manager</h2><p>Track pending fees and remind parents without awkward calls.</p></section>
+  <section class="stats">
+    <div class="stat primary"><span class="stat-icon">₹</span><div class="stat-label">Total pending fees</div><div class="stat-value" id="totalAmount">₹27,500</div><div class="stat-foot">Across 8 students</div></div>
+    <div class="stat"><span class="stat-icon">👨‍🎓</span><div class="stat-label">Students with dues</div><div class="stat-value" id="studentCount">8</div><div class="stat-foot">Need a fee reminder</div></div>
+    <div class="stat"><span class="stat-icon">📨</span><div class="stat-label">Reminders sent</div><div class="stat-value" id="sentCount">0/8</div><div class="stat-foot" id="sentFoot">No demo reminders sent yet</div></div>
+  </section>
+  <section class="toolbar"><div><h3>Pending fee list</h3><p>Each parent gets a personalised message with the exact amount.</p></div><button class="btn btn-main" id="sendAll">📲 Send reminders to all 8 parents <span>→</span></button></section>
+  <section class="table-card">
+    <div class="table-top"><strong style="font-size:13px">Students & pending amounts</strong><input class="search" id="search" placeholder="Search student..." aria-label="Search students"></div>
+    <div class="table-wrap"><table><thead><tr><th>Student</th><th>Parent contact</th><th>Pending fee</th><th>Reminder status</th><th>Action</th></tr></thead><tbody id="studentRows"></tbody></table></div>
+  </section>
+  <div class="bottom-note"><span>🔒</span><div><strong style="color:#5b6578">Demo mode:</strong> Buttons simulate reminder sending and do not send real WhatsApp messages. Real delivery requires a supported WhatsApp Business integration and parent contact consent.</div></div>
+  <div class="footer"><span>Tuition Manager · Fee Manager prototype</span><span>Sample names and masked contact numbers</span></div>
+</main>
+<main id="attendancePage" class="page-hidden">
+  <section class="greeting"><h2>Attendance</h2><p>Tap P or A. The demo prepares an automatic WhatsApp attendance update for that student's parent.</p></section>
+  <section class="attendance-summary">
+    <div class="att-stat"><span>👨‍🎓 Total students</span><strong>8</strong></div>
+    <div class="att-stat"><span>✅ Present</span><strong id="presentCount">0</strong></div>
+    <div class="att-stat"><span>🚨 Absent</span><strong id="absentCount">0</strong></div>
+  </section>
+  <div class="attendance-callout"><strong>Automatic attendance update:</strong> Tap <b>P</b> or <b>A</b> and the demo processes a personalised attendance WhatsApp update for that student's saved parent contact. Real messages require a WhatsApp Business integration and parent consent; this demo does not send them.</div>
+  <section class="table-card">
+    <div class="table-top"><strong style="font-size:13px">Today's student attendance</strong><input class="search" id="attendanceSearch" placeholder="Search student..." aria-label="Search attendance students"></div>
+    <div class="table-wrap"><table style="min-width:720px"><thead><tr><th>Student</th><th>Parent contact</th><th>Mark attendance</th><th>WhatsApp status</th></tr></thead><tbody id="attendanceRows"></tbody></table></div>
+  </section>
+  <div class="bottom-note"><span>⚡</span><div><strong style="color:#5b6578">One-tap flow:</strong> Teacher taps P or A. The demo processes an attendance WhatsApp update for that child. Real delivery can only be confirmed by the connected messaging service.</div></div>
+  <div class="footer"><span>Tuition Manager · Attendance prototype</span><span>Sample names and masked contact numbers</span></div>
+</main>
+<main id="parentsPage" class="page-hidden">
+  <section class="greeting"><h2>Parents Panel</h2><p>Check your child's homework and pending tuition fees in one place.</p></section>
+  <section class="parent-select-card" style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow);margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap">
+    <div><strong style="font-size:14px">Student profile</strong><p style="margin:5px 0 0;color:var(--muted);font-size:12px">Choose the child linked to this parent account.</p></div>
+    <select id="parentStudentSelect" class="search" style="max-width:100%;width:260px" aria-label="Select student"></select>
+  </section>
+  <section class="parent-summary" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px">
+    <div class="stat"><span class="stat-icon">📚</span><div class="stat-label">Homework due</div><div class="stat-value" id="homeworkCount">2</div><div class="stat-foot">Tasks assigned by the teacher</div></div>
+    <div class="stat primary"><span class="stat-icon">₹</span><div class="stat-label">Pending tuition fees</div><div class="stat-value" id="parentPendingAmount">₹5,000</div><div class="stat-foot" id="parentFeeFoot">Please pay the pending amount</div></div>
+  </section>
+  <section class="toolbar"><div><h3>Today's homework</h3><p>Homework and due dates shared by the teacher.</p></div></section>
+  <section class="homework-list" id="homeworkList" style="display:grid;gap:12px;margin-bottom:22px"></section>
+  <section class="parent-pay-card" style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)">
+    <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px"><div class="logo" style="flex-shrink:0;background:linear-gradient(135deg,#16865d,#28b881)">₹</div><div><h3 style="margin:0 0 5px;font-size:18px">Pay tuition fees</h3><p style="margin:0;color:var(--muted);font-size:12px;line-height:1.5">Pay the outstanding amount using a supported UPI app.</p></div></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px;background:#f6f8fc;border-radius:12px;margin-bottom:14px"><span style="font-size:13px;color:var(--muted)">Amount due</span><strong id="payAmount" style="font-size:22px">₹5,000</strong></div>
+    <button class="btn btn-main" id="payByUpi" style="width:100%;background:#16865d">💳 Pay fees by UPI <span>→</span></button>
+    <p style="font-size:11px;line-height:1.5;color:var(--muted);margin:12px 2px 0">Demo only: no money is transferred and the fee status will not change automatically. Real UPI payments need the teacher's verified UPI details or a payment gateway.</p>
+  </section>
+  <div class="bottom-note"><span>🔐</span><div>In a real app, each parent should securely sign in and only see their own child's homework and fee details.</div></div>
+  <div class="footer"><span>Tuition Manager · Parents Panel prototype</span><span>Sample student and homework data</span></div>
+</main>
+<main id="testPage" class="page-hidden">
+  <section class="greeting"><h2>Test Marks & Rank</h2><p>Enter each student's marks for a test. The demo calculates percentage and class rank automatically.</p></section>
+  <section class="stats">
+    <div class="stat primary"><span class="stat-icon">🏆</span><div class="stat-label">Class topper</div><div class="stat-value" id="topperName">Rahul Sharma</div><div class="stat-foot" id="topperScore">92 / 100 marks</div></div>
+    <div class="stat"><span class="stat-icon">📈</span><div class="stat-label">Class average</div><div class="stat-value" id="classAverage">78.5%</div><div class="stat-foot">Across all students</div></div>
+    <div class="stat"><span class="stat-icon">🧑‍🎓</span><div class="stat-label">Marks entered</div><div class="stat-value" id="marksEntered">8/8</div><div class="stat-foot">Students with a score</div></div>
+  </section>
+  <section class="toolbar"><div><h3>Class test results</h3><p>Change the test name, maximum marks and each student's score.</p></div><button class="btn btn-main" id="saveMarks">💾 Save test results</button></section>
+  <section class="table-card">
+    <div class="table-top" style="flex-wrap:wrap"><input class="search" id="testName" value="Weekly Test 1" aria-label="Test name" style="max-width:100%;width:220px"><label style="font-size:12px;color:var(--muted);font-weight:750;display:flex;align-items:center;gap:8px">Maximum marks <input class="search" id="maxMarks" type="number" min="1" max="1000" value="100" style="width:105px;max-width:120px"></label><input class="search" id="testSearch" placeholder="Search student..." aria-label="Search test students"></div>
+    <div class="table-wrap"><table style="min-width:680px"><thead><tr><th>Student</th><th>Marks obtained</th><th>Percentage</th><th>Class rank</th><th>Result</th></tr></thead><tbody id="testRows"></tbody></table></div>
+  </section>
+  <div class="bottom-note"><span>ℹ️</span><div><strong style="color:#5b6578">Demo mode:</strong> Test marks and rankings are sample data stored only in this page session. A real app needs secure storage and teacher access controls. Equal marks share the same rank.</div></div>
+  <div class="footer"><span>Tuition Manager · Test & Rank prototype</span><span>Sample marks only</span></div>
+</main>
+
+<main id="ownerPage" class="page-hidden">
+  <section class="greeting"><h2>Owner Dashboard</h2><p>Tuition fees, pending dues, and friend-referral enquiries — all in one place.</p></section>
+  <section class="stats owner-stats">
+    <div class="stat primary"><span class="stat-icon">💵</span><div class="stat-label">Fees received (demo total)</div><div class="stat-value" id="ownerReceived">₹42,000</div><div class="stat-foot">Sample recorded collections</div></div>
+    <div class="stat"><span class="stat-icon">⏳</span><div class="stat-label">Fees still pending</div><div class="stat-value" id="ownerPending">₹27,500</div><div class="stat-foot">Across 8 sample students</div></div>
+    <div class="stat"><span class="stat-icon">🤝</span><div class="stat-label">Friend-referral enquiries</div><div class="stat-value" id="ownerReferrals">6</div><div class="stat-foot">Sample leads referred by friends</div></div>
+  </section>
+  <section class="owner-mini-grid">
+    <div class="att-stat"><span>📚 Total fees recorded</span><strong id="ownerTotalFees">₹69,500</strong><small>Received + pending</smal
